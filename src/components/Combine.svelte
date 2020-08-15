@@ -1,9 +1,11 @@
 <script>
   import { onMount } from "svelte";
+  import InputChip from "./InputChip.svelte";
   import ResultChip from "./ResultChip.svelte";
 
   let input = "🏳🌈";
   let result;
+  let placeholder = "Combine them!";
 
   const combine = emojis => {
     return emojis.reduce((a, b) => a + "\u200d" + b);
@@ -15,16 +17,10 @@
   onMount(() => combineHandler(input));
 </script>
 
-<style>
-
-</style>
-
 <div class="container">
-  <input
-    type="text"
-    placeholder="Combine emojis"
-    bind:value={input}
-    on:input={combineHandler(input)} />
-
-  <ResultChip string={result} />
+  <InputChip
+    placeholder={'Some nice emojis'}
+    bind:input
+    func={combineHandler(input)} />
+  <ResultChip {result} {placeholder} />
 </div>
