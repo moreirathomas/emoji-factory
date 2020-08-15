@@ -1,30 +1,53 @@
 <script>
-	export let name;
+  import Combine from "./components/Combine.svelte";
+  import Spread from "./components/Spread.svelte";
 </script>
 
+<style>
+  main,
+  footer {
+    /* padding: 1em; */
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: #ff3e00;
+    font-size: 3em;
+    font-weight: 300;
+  }
+  h1 span {
+    font-weight: 500;
+  }
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
+  }
+</style>
+
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+
+  <header>
+    <h1>
+      Welcome to the
+      <span>Emoji Factory</span>
+    </h1>
+    <p>Here you can play with emojis and discover how they're built 🔥</p>
+    <p>Play around and find secrets 🔭</p>
+  </header>
+
+  <h3>Combine simple emojis into more complex ones 🧩</h3>
+  <Spread />
+
+  <h3>Break emojis into their components 🧨</h3>
+  <Combine />
+
 </main>
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+<footer>
+  <h4>
+    By
+    <a href="https://github.com/moreirathomas">moreirathomas</a>
+  </h4>
+</footer>
