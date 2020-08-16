@@ -1,7 +1,7 @@
 <script>
-  import Combine from "./components/Combine.svelte";
-  import Spread from "./components/Spread.svelte";
-  import ThemeToggle from "./components/ThemeToggle.svelte";
+  import Combine from "./components/logic/Combine.svelte";
+  import Spread from "./components/logic/Spread.svelte";
+  import ThemeToggle from "./components/logic/ThemeToggle.svelte";
 </script>
 
 <style>
@@ -24,8 +24,11 @@
   }
   h1 span {
     font-weight: 500;
+    transition: color 0.15s;
   }
-
+  h1 span:hover {
+    color: var(--action-color);
+  }
   /* responsive layout */
   @media (min-width: 640px) {
     main {
@@ -56,7 +59,7 @@
   </header>
 
   <section>
-    <h3>Break emojis into their components 🧨</h3>
+    <h3>Break an emoji into its components 🧨</h3>
     <Spread />
 
     <h3>Combine simple emojis into more complex ones 🧩</h3>

@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import InputChip from "./InputChip.svelte";
-  import ResultChip from "./ResultChip.svelte";
+  import InputChip from "../view/InputChip.svelte";
+  import ResultChip from "../view/ResultChip.svelte";
 
   let input = "👨‍👩‍👦‍👦";
   let result;
